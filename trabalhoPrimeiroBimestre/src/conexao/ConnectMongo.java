@@ -4,13 +4,6 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
 
-
-import com.mongodb.ServerAddress;
-import com.mongodb.client.MongoCollection;
-import org.bson.Document;
-
-
-
 public class ConnectMongo {
 	public static void main( String args[] ){
 		try {
