@@ -17,21 +17,21 @@ public class FunctionMongoDB {
 			
 	public void cadastrar(dto dto) {
 		try {
-
-
-
 				MongoCollection<Document> collection = database.getCollection("endereco");
 
 				Document doc = new Document();
-				doc.put("rua", "sao tomas de aquino 4");
-				doc.put("cep", "casado");
+				doc.put("Rua", "sao tomas de aquino 4");
+				doc.put("Cep", "casado");
+				doc.put("Bairro", "sao tomas de aquino 4");
+				doc.put("Estado", "sao tomas de aquino 4");
 
 				collection.insertOne(doc);
 
-				}catch (Exception e) {
+			}catch (Exception e) {
 					// TODO: handle exception
 					System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-				}
-	}
+			}
+		}
+	
 }
 
