@@ -1,12 +1,15 @@
 package model;
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
-
+import com.mongodb.client.*;
 import org.bson.Document;
+import static com.mongodb.client.model.Filters.*;
+import org.bson.types.ObjectId;
 import dto.dto;
 
 
@@ -40,18 +43,22 @@ public class FunctionMongoDB {
 	 * @return string
 	 * @param dto
 	 */
-	public String consultar(dto dto) {
-		String mensagem;
+	public void consultar(dto dto) {
+	
+		MongoCursor<Document> cursor = collection.
+				find(eq("Cep",dto.getCep())).iterator();
 		try {
-			MongoCursor<Document> cursor = collection.find().iterator();
-			while (cursor.hasNext()) {
-				 System.out.println(cursor.next());
-				}
-		}catch (Exception e) {
-			// TODO: handle exception
-			mensagem = e.getClass().getName() + ": " + e.getMessage();
+			while (cursor.hasNext()){
+				Document atual = cursor.next();
+				System.out.println(atual.get("Cep"));
+				System.out.println(atual.get("Rua"));
+				System.out.println(atual.get("Bairro"));
+				System.out.println(atual.get("Estado"));
+				
+			}
+		}finally {
+			cursor.close();
 		}
-		return "";
 	}
 	
 	
