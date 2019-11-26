@@ -24,7 +24,7 @@ public class processo implements Runnable{
 	}
 	
 	public String ExportBaseDados() {
-		new Thread(() ->ExportXls.csvExport()).start();
+		new Thread(() ->ExportXls.csvExportMysql()).start();
 		return "";
 	}
 	public String CadastraEnderecoMongoDB(dto dto) {
