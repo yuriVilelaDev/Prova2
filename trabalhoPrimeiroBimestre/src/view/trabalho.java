@@ -51,16 +51,20 @@ public class trabalho extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 448);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setForeground(Color.BLACK);
+		contentPane.setBackground(Color.BLUE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JMenuBar menu = new JMenuBar();
+		menu.setBackground(Color.WHITE);
 		setJMenuBar(menu);
 		
-		JMenu exportJMenu= new JMenu("menu");
-		JMenu importJMenu= new JMenu("Importar Dados");
+		JMenu exportJMenu= new JMenu("Import/Export");
+		exportJMenu.setForeground(Color.BLACK);
+		exportJMenu.setBackground(Color.WHITE);
+		JMenu importJMenu= new JMenu("Importar Dados Para o Mongo");
 		menu.add(exportJMenu);
 		exportJMenu.add(importJMenu);
 		JMenuItem test = new JMenuItem("Exportar Dados");
@@ -155,11 +159,11 @@ public class trabalho extends JFrame {
 			}
 		});
 	
-		JButton btnLimpar = new JButton("Limpar");
-		btnLimpar.setBounds(237, 334, 89, 23);
+		JButton btnLimpar = new JButton("Buscar MySql");
+		btnLimpar.setBounds(237, 230, 172, 23);
 		contentPane.add(btnLimpar);
 		
-		JButton Pesquisar = new JButton("Pesquisar");
+		JButton Pesquisar = new JButton("Buscar Mongo");
 		
 		Pesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {			
@@ -175,17 +179,17 @@ public class trabalho extends JFrame {
 							
 			}
 		});
-		Pesquisar.setBounds(106, 334, 89, 23);
+		Pesquisar.setBounds(25, 230, 163, 23);
 		contentPane.add(Pesquisar);
 		
 		JLabel CEP = new JLabel("CEP");
 		CEP.setForeground(Color.WHITE);
-		CEP.setBounds(41, 62, 46, 14);
+		CEP.setBounds(41, 62, 99, 14);
 		contentPane.add(CEP);
 		
 		JLabel Endereco = new JLabel("Endereco");
 		Endereco.setForeground(Color.WHITE);
-		Endereco.setBounds(41, 105, 46, 14);
+		Endereco.setBounds(41, 105, 99, 14);
 		contentPane.add(Endereco);
 		
 		JLabel Bairro = new JLabel("Bairro");
@@ -199,17 +203,17 @@ public class trabalho extends JFrame {
 		contentPane.add(lblPesquisa);
 		
 		textField = new JTextField();
-		textField.setBounds(109, 59, 201, 20);
+		textField.setBounds(178, 59, 201, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(109, 102, 201, 20);
+		textField_1.setBounds(178, 102, 201, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(106, 149, 204, 20);
+		textField_2.setBounds(175, 149, 204, 20);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 	}

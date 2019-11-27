@@ -45,7 +45,7 @@ public class ExportXls {
         String col = "endereco";
         String Host = "mongodb://yuri:20berv18@facu-shard-00-00-tym0q.gcp.mongodb.net:27017,facu-shard-00-01-tym0q.gcp.mongodb.net:27017,facu-shard-00-02-tym0q.gcp.mongodb.net:27017/test?ssl=true&replicaSet=facu-shard-0&authSource=admin&retryWrites=true&w=majority\");\r\n" ;
         String Port = "27017";
-        String fileName = "D:/files/sample.csv";
+        String fileName = "C:\\\\Users\\\\yuris\\\\eclipse-workspace\\\\trabalhoPrimeiroBimestre\\\\Export\\\\test.csv";
 
         String command = "C:\\Program Files\\MongoDB\\Server\\3.4\\bin\\mongoexport.exe --host " + Host + " --port " + Port + " --db " + db + " --collection " + col + " --type=csv --fields _id,email,createdAt, --out " + fileName + "";
 
