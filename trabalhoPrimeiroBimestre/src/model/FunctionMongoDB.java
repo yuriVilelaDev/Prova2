@@ -9,6 +9,9 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.*;
 import org.bson.Document;
 import static com.mongodb.client.model.Filters.*;
+
+import javax.swing.JOptionPane;
+
 import org.bson.types.ObjectId;
 import dto.dto;
 
@@ -43,18 +46,29 @@ public class FunctionMongoDB {
 	 * @return string
 	 * @param dto
 	 */
-	public void consultar(dto dto) {
+	public void consultarCep(dto dto) {
 	
 		MongoCursor<Document> cursor = collection.
 				find(eq("Cep",dto.getCep())).iterator();
 		try {
 			while (cursor.hasNext()){
 				Document atual = cursor.next();
-				System.out.println(atual.get("Cep"));
-				System.out.println(atual.get("Rua"));
-				System.out.println(atual.get("Bairro"));
-				System.out.println(atual.get("Estado"));
 				
+				JOptionPane.showMessageDialog(null, atual.get("Rua")+"\n"+atual.get("Cep")+"\n"+atual.get("Bairro")+"/n"+atual.get("Estado"));
+			}
+		}finally {
+			cursor.close();
+		}
+	}
+	public void consultarRua(dto dto) {
+		
+		MongoCursor<Document> cursor = collection.
+				find(eq("Rua",dto.getRua())).iterator();
+		try {
+			while (cursor.hasNext()){
+				Document atual = cursor.next();
+				
+				JOptionPane.showMessageDialog(null,"Rua: "+ atual.get("Rua")+"\n CEP: "+atual.get("Cep")+"\n Bairro: "+atual.get("Bairro")+"/n Estado: "+atual.get("Estado"));
 			}
 		}finally {
 			cursor.close();

@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -171,10 +172,9 @@ public class trabalho extends JFrame {
 				dto.setCep(textField.getText());
 				
 				processo p2 = new processo();
-				oi= p2.buscaenderecoCep(dto);
+				oi= p2.BuscarEnderoMongoDB(dto);
 				Thread thread1 = new Thread(oi);
 				thread1.start();
-				
 				
 							
 			}

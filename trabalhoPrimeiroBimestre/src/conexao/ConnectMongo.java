@@ -9,9 +9,9 @@ import controller.*;
 public class ConnectMongo {
 	public static void main( String args[] ){
 		dto dto = new dto();
-		ImportCsv test = new ImportCsv();
+		processo test = new processo();
 		dto.setArquivo("sp.cepaberto_parte_1.csv");
-		test.cadastraDadosArquivoMongoDb(dto);
+		test.cadastraEndereco(dto);
 		//dto.setCep("01029000");
 		//test.consultar(dto);
 		}

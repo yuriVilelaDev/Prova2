@@ -32,7 +32,12 @@ public class processo implements Runnable{
 		return "";
 	}
 	public String BuscarEnderoMongoDB(dto dto) {
-		new Thread(()->mongoDb.consultar(dto)).start();
+		if(dto.getCep()!="") {
+			new Thread(()->mongoDb.consultarCep(dto)).start();	
+		}else {
+			new Thread(()->mongoDb.consultarRua(dto)).start();
+		}
+		
 		return "";
 	}
 	@Override

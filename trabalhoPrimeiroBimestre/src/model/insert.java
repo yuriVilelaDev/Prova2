@@ -40,7 +40,7 @@ public class insert {
 		 try
 		    {	      
 			 	Class.forName("com.mysql.jdbc.Driver").newInstance();
-	            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/trabalho_primeiro_bimestre", "root", "");
+	            Connection conn = DriverManager.getConnection("jdbc:mysql:dayjob-230913:southamerica-east1:faculdade", "root", "");
 	            String query = "SELECT * FROM catalagoEndereco where cep = "+dto.getCep();
 		        Statement st = (Statement) conn.createStatement();
 		        ResultSet rs = st.executeQuery(query);
